@@ -4,7 +4,8 @@
   "description": "",
   "main": "api.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "start": "node api.js"
   },
   "keywords": [],
   "author": "",

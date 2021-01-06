@@ -1,5 +1,8 @@
 var express = require('express')
 var app = express()
+var port = 3000
+
+app.use(express.json())
 
 let bookTemp=[
   {
@@ -35,5 +38,7 @@ app.get('/', (req, res) => {
 app.get('/books', (req,res)=>{
   res.send(bookTemp)
 })
+
+app.listen(port, () => console.log(`We are listening at port ${port}`))
 
 module.exports = app
