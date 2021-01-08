@@ -37,9 +37,24 @@ app.get('/', (req, res) => {
     res.send('Success')
 })
 
+app.get('/books/:index/checkout', (req, res) => {
+  const book = bookTemp[req.params.index]
+  if(book.isCheckedOut){
+    res.send("Book is checked out")
+  }else(
+    res.send("Book is available for check out")
+  )
+})
+
+app.get('/books/:index', (req, res) => {
+  res.json(bookTemp[req.params.index])
+})
+
 app.get('/books', (req,res)=>{
   res.json(bookTemp)
 })
+
+
 
 app.listen(port, () => console.log(`We are listening at port ${port}`))
 
