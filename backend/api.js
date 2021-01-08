@@ -1,8 +1,10 @@
 var express = require('express')
 var app = express()
 var port = 3001
+var cors = require('cors')
 
 app.use(express.json())
+app.use(cors())
 
 let bookTemp=[
   {
@@ -36,7 +38,7 @@ app.get('/', (req, res) => {
 })
 
 app.get('/books', (req,res)=>{
-  res.send(bookTemp)
+  res.json(bookTemp)
 })
 
 app.listen(port, () => console.log(`We are listening at port ${port}`))
